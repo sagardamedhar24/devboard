@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevBoard - Task Tracker</title>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      color: #fff;
+      background: linear-gradient(135deg, #2e1065, #7c3aed, #c084fc);
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 35px;
+    }
+
+    header h1 { font-size: 30px; }
+    header p { opacity: .8; margin-top: 6px; }
+
+    button {
+      border: 0;
+      padding: 12px 18px;
+      border-radius: 10px;
+      background: #fff;
+      color: #6d28d9;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 25px;
+    }
+
+    .card, .tasks {
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.2);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .card strong {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    .tasks {
+      background: #fff;
+      color: #21143b;
+    }
+
+    .tasks h2 { margin-bottom: 18px; }
+
+    .task {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .task:last-child { border: 0; }
+
+    .status {
+      padding: 6px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      background: #ede9fe;
+      color: #6d28d9;
+    }
+
+    @media (max-width: 650px) {
+      body { padding: 20px; }
+      .stats { grid-template-columns: 1fr; }
+      header { gap: 15px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <header>
+      <div>
+        <h1>⚡ DevBoard</h1>
+        <p>Your developer task tracker</p>
+      </div>
+      <button>+ New Task</button>
+    </header>
+
+    <section class="stats">
+      <div class="card">
+        <strong>12</strong>
+        Total Tasks
+      </div>
+      <div class="card">
+        <strong>5</strong>
+        In Progress
+      </div>
+      <div class="card">
+        <strong>7</strong>
+        Completed
+      </div>
+    </section>
+
+    <section class="tasks">
+      <h2>My Tasks</h2>
+
+      <div class="task">
+        <span>Implement Authentication API</span>
+        <span class="status">In Progress</span>
+      </div>
+
+      <div class="task">
+        <span>Fix Dashboard UI Bug</span>
+        <span class="status">To Do</span>
+      </div>
+
+      <div class="task">
+        <span>Optimize Database Queries</span>
+        <span class="status">In Progress</span>
+      </div>
+
+      <div class="task">
+        <span>Write Payment Module Tests</span>
+        <span class="status">To Do</span>
+      </div>
+
+      <div class="task">
+        <span>Update Dependencies</span>
+        <span class="status">Completed</span>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
